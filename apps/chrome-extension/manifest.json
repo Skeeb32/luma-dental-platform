@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Pulse Click-to-Text",
+  "description": "Detect phone numbers on CRM pages and launch Pulse conversations.",
+  "version": "0.1.0",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Pulse"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

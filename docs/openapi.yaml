@@ -1,0 +1,108 @@
+openapi: 3.1.0
+info:
+  title: Pulse Platform API
+  version: 1.0.0
+  description: Multi-tenant REST API for messaging, campaigns, contacts, payments, and reviews.
+servers:
+  - url: /api/v1
+paths:
+  /messages/send:
+    post:
+      summary: Send transactional SMS or MMS
+      responses:
+        "202":
+          description: Accepted for delivery
+  /messages/smart-send:
+    post:
+      summary: Generate send-time and copy recommendations
+      responses:
+        "200":
+          description: Recommendation generated
+  /contacts:
+    get:
+      summary: List contacts
+      responses:
+        "200":
+          description: Contacts returned
+    post:
+      summary: Create or upsert contact
+      responses:
+        "201":
+          description: Contact created
+  /contacts/segments:
+    get:
+      summary: List smart segments
+      responses:
+        "200":
+          description: Segment list returned
+  /conversations:
+    get:
+      summary: List conversations
+      responses:
+        "200":
+          description: Conversations returned
+  /campaigns/send:
+    post:
+      summary: Launch or schedule campaign
+      responses:
+        "202":
+          description: Campaign accepted
+  /campaigns/analytics:
+    get:
+      summary: Fetch campaign analytics
+      responses:
+        "200":
+          description: Analytics snapshot returned
+  /templates:
+    get:
+      summary: List template library
+      responses:
+        "200":
+          description: Templates returned
+  /templates/{id}/ab-test:
+    post:
+      summary: Start template A/B test
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "202":
+          description: Experiment accepted
+  /automations:
+    get:
+      summary: List automations
+      responses:
+        "200":
+          description: Automations returned
+  /payments:
+    get:
+      summary: List payment requests
+      responses:
+        "200":
+          description: Payments returned
+  /reviews:
+    get:
+      summary: List review workflows
+      responses:
+        "200":
+          description: Reviews returned
+  /media/upload:
+    post:
+      summary: Create media upload contract
+      responses:
+        "201":
+          description: Upload created
+  /webhooks:
+    get:
+      summary: List webhook subscriptions
+      responses:
+        "200":
+          description: Webhooks returned
+    post:
+      summary: Register webhook endpoint
+      responses:
+        "201":
+          description: Webhook created
