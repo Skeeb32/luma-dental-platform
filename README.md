@@ -180,5 +180,7 @@ This repository intentionally prioritizes realistic workflows and clear service 
 
 <div align="center">
   Built as a full-stack product exercise focused on the judgment, workflow design, and code boundaries expected in senior engineering roles.<br><br>
-  <sub>Interested in the design decisions? Start with <a href="./docs/architecture.md">the architecture notes</a>.</sub>
+  <sub>Interested in the design decisions? Start with <a href="./docs/architecture.md">the architecture notes</a>.
+    <sub>All rights &copy; Shaqib Habib</sub>
+  </sub>
 </div>
